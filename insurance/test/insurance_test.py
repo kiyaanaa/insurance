@@ -1,5 +1,11 @@
-from insurance.controller import insurance_controller
-from insurance.controller.insurance_controller import InsuranceController
+# insured = Insured(....)
+# InsuredService.save(isured)
+# ... save
 
-print(InsuranceController.find_all())
-print(InsuranceController.find_by_id(1))
+# worker ... save
+# marketer ... save
+# insurance ... save
+
+# insurance_sell = InsuranceSell()
+# insurance_sell.insured = insured
+# InsuranceSell.save(insurance_sell)

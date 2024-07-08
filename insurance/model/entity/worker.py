@@ -4,8 +4,8 @@ from insurance.model.entity.base import Base
 from insurance.model.tools.insurance_validator import *
 
 
-class Workers(Base):
-    __tablename__ = 'workers_tbl'
+class Worker(Base):
+    __tablename__ = 'worker_tbl'
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _name = Column("name", String(30))
     _family = Column("family", String(30))

@@ -1,5 +1,7 @@
 from sqlalchemy import Column, Integer, ForeignKey, Boolean, DateTime, Date
-from insurance.model.entity.base import Base
+from sqlalchemy.orm import relationship
+
+from insurance.model.entity import *
 from insurance.model.tools.insurance_validator import *
 
 
@@ -13,6 +15,18 @@ class InsuranceSell(Base):
     _date_of_sale = Column("date_of_sale", DateTime)
     _deleted = Column("deleted", Boolean, default=False)
 
+    _insurance_id = Column("insurance_id", Integer, ForeignKey("insurance_tbl.id"))
+    insurance = relationship("Insurance")
+    
+    _insured_id = Column("insured_id", Integer, ForeignKey("insured_tbl.id"))
+    insured = relationship("Insured")
+    
+    _worker_id = Column("worker_id", Integer, ForeignKey("worker_tbl.id"))
+    worker = relationship("Worker")
+    
+    _marketer_id = Column("marketer_id", Integer, ForeignKey("marketer_tbl.id"))
+    marketer = relationship("Marketer")
+    
     def __init__(self, start_date, end_date, date_of_sale, deleted=False):
         self._id = None
         self._person_id = None

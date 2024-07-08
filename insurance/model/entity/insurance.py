@@ -1,11 +1,10 @@
-from datetime import datetime
 from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
 from insurance.model.entity.base import Base
 from insurance.model.tools.insurance_validator import pattern_validator, date_time_validator
 
 
-class Insurances(Base):
-    __tablename__ = 'insurances_tbl'
+class Insurance(Base):
+    __tablename__ = 'insurance_tbl'
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _insurance_id = Column("insurance_id", String(30))
     _worker_id = Column("worker_id", Integer)
