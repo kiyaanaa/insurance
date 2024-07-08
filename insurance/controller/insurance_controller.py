@@ -1,4 +1,4 @@
-from insurance.model.entity.insured_table import Insurance
+from insurance.model.entity.insured import Insurance
 from insurance.model.service.insurance_service import InsuranceService
 from insurance.model.tools import logger
 from insurance.model.tools.logger import Logger

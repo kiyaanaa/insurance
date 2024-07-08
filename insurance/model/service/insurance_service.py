@@ -1,6 +1,6 @@
 from insurance.controller.exception.insurance_exception import InsuranceNotFoundError
 from insurance.model.da.insurance_da import DataAccess
-from insurance.model.entity.insured_table import Insurance
+from insurance.model.entity.insured import Insurance
 class InsuranceService:
     @staticmethod
     def save(insurance):
