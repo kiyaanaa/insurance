@@ -1,5 +1,7 @@
+from insurance.model.service import *
+
 # insured = Insured(....)
-# InsuredService.save(isured)
+#InsuredService.save(insured)
 # ... save
 
 # worker ... save
