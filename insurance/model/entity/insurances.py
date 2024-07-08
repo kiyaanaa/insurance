@@ -6,7 +6,7 @@ from insurance.model.tools.insurance_validator import pattern_validator, date_ti
 
 class Insurances(Base):
     __tablename__ = 'insurances_tbl'
-    _id = Column("id", Integer, ForeignKey=True, autoincrement=True)
+    _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _insurance_id = Column("insurance_id", String(30))
     _worker_id = Column("worker_id", Integer)
     _name = Column("name", String(30))
@@ -55,7 +55,6 @@ class Insurances(Base):
         return self._deleted
 
     @deleted.setter
-    @deleted
     def deleted(self, deleted):
         if isinstance(deleted, bool):
             self._deleted = deleted

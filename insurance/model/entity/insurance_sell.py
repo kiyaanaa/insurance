@@ -5,7 +5,7 @@ from insurance.model.tools.insurance_validator import *
 
 class InsuranceSell(Base):
     __tablename__ = 'insurance_sell_tbl'
-    _id = Column("id", Integer, ForeignKey=True, autoincrement=True)
+    _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _person_id = Column("person_id", Integer)
     _insured_id = Column("insurance_id", Integer)
     _start_date = Column("start_date", Date)
@@ -54,7 +54,6 @@ class InsuranceSell(Base):
         return self._deleted
 
     @deleted.setter
-    @deleted
     def deleted(self, deleted):
         if isinstance(deleted, bool):
             self._deleted = deleted

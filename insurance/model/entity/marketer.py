@@ -106,7 +106,6 @@ class Marketer(Base):
         return self._deleted
 
     @deleted.setter
-    @deleted
     def deleted(self, deleted):
         if isinstance(deleted, bool):
             self._deleted = deleted
