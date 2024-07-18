@@ -111,3 +111,5 @@ class Insured(Base):
             self._deleted = deleted
         else:
             raise ValueError("Invalid deleted !!!")
+
+

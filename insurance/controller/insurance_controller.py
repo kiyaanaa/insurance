@@ -1,60 +1,158 @@
-from insurance.model.entity.insured import Insurance
-from insurance.model.service.insurance_service import InsuranceService
-from insurance.model.tools import logger
-from insurance.model.tools.logger import Logger
+from insurance.model.entity.insurance import Insurance
+from insurance.model.entity.insurance_sell import InsuranceSell
+from insurance.model.entity.insured import Insured
+from insurance.model.entity.marketer import Marketer
+from insurance.model.entity.worker import Worker
+from insurance.model.service.insurance_service import InsuranceService, InsuranceSellService, InsuredService, \
+    MarketerService, WorkerService
+from insurance.model.tools.insurance_decorator import exception_handling
 
 
 class InsuranceController:
-    @staticmethod
-    def save(insured, employee, marketer, representative, price, insurance_date_time):
-        try:
-            insurance = Insurance(insured, employee, marketer, representative, price, insurance_date_time)
-            InsuranceService.save(insurance)
-            logger.info(f"Insurance Saved - {insurance}")
-            return True, insurance
-        except Exception as e:
-            logger.error(f"{e}")
-            return False, f"{e}"
+    @classmethod
+    @exception_handling
+    def save(cls, name, date_of_sale, price):
+        insurance = Insurance(name, date_of_sale, price)
+        return True, InsuranceService.save(insurance)
 
-    @staticmethod
-    def edit(insured, employee, marketer, representative, price, insurance_date_time):
-        try:
-            insurance = Insurance(insured, employee, marketer, representative, price, insurance_date_time)
-            InsuranceService.edit(insurance)
-            logger.info(f"Insurance Edited - {insurance}")
-            return True, insurance
-        except Exception as e:
-            logger.error(f"{e}")
-            return False, f"{e}"
+    @classmethod
+    @exception_handling
+    def edit(cls, id, insurance_id, worker_id, name):
+        insurance = Insurance(id, insurance_id, worker_id, name)
+        insurance.id = id
+        return True, InsuranceService.edit(insurance)
 
-    @staticmethod
-    def remove(id):
-        try:
-            insurance = InsuranceService.remove(id)
-            Logger.info(f"Insurance Removed - {insurance}")
-            return True, insurance
-        except Exception as e:
-            Logger.error(f"{e}")
-            return False, f"{e}"
+    @classmethod
+    @exception_handling
+    def remove(cls, id):
+        return True, InsuranceService.remove(id)
 
-    @staticmethod
-    def find_all():
-        try:
-            insurance_list = InsuranceService.find_all()
-            Logger.info(f"Insurance Find All()")
-            return True, insurance_list
-        except Exception as e:
-            Logger.error(f"{e}")
-            return False, f"{e}"
+    @classmethod
+    @exception_handling
+    def find_all(cls, ):
+        return True, InsuranceService.find_all()
 
-    @staticmethod
-    def find_by_id(id):
-        try:
-            insurance = InsuranceService.find_by_id(id)
-            Logger.info(f"Insurance Find By Id({id})")
-            return True, insurance
-        except Exception as e:
-            Logger.error(f"{e}")
-            return False, f"{e}"
+    @classmethod
+    @exception_handling
+    def find_by_id(cls, id):
+        return True, InsuranceService.find_by_id(id)
 
 
+class InsuranceSellController:
+    @classmethod
+    @exception_handling
+    def save(cls, start_date, end_date, date_of_sale):
+        insurance_sell = InsuranceSell(start_date, end_date, date_of_sale)
+        return True, InsuranceService.save(insurance_sell)
+
+    @classmethod
+    @exception_handling
+    def edit(cls, id, person_id, insured_id):
+        insurance_sell = InsuranceSell(id, person_id, insured_id)
+        insurance_sell.id = id
+        return True, InsuranceSellService.edit(insurance_sell)
+
+    @classmethod
+    @exception_handling
+    def remove(cls, id):
+        return True, InsuranceSellService.remove(id)
+
+    @classmethod
+    @exception_handling
+    def find_all(cls, ):
+        return True, InsuranceSellService.find_all()
+
+    @classmethod
+    @exception_handling
+    def find_by_id(cls, id):
+        return True, InsuranceSellService.find_by_id(id)
+
+
+class InsuredController:
+    @classmethod
+    @exception_handling
+    def save(cls, name, family, birth_date, gender, national_id, email, phone, address):
+        insured = Insured(name, family, birth_date, gender, national_id, email, phone, address)
+        return True, InsuranceService.save(insured)
+
+    @classmethod
+    @exception_handling
+    def edit(cls, id, name, family, birth_date, gender, national_id, email, phone, address):
+        insured = Insured(id, name, family, birth_date, gender, national_id, email, phone, address)
+        insured.id = id
+        return True, InsuredService.edit(insured)
+
+    @classmethod
+    @exception_handling
+    def remove(cls, id):
+        return True, InsuredService.remove(id)
+
+    @classmethod
+    @exception_handling
+    def find_all(cls, ):
+        return True, InsuredService.find_all()
+
+    @classmethod
+    @exception_handling
+    def find_by_id(cls, id):
+        return True, InsuredService.find_by_id(id)
+
+
+class MarketerController:
+    @classmethod
+    @exception_handling
+    def save(cls, name, family, birth_date, gender, national_id, email, phone, address):
+        marketer = Marketer(name, family, birth_date, gender, national_id, email, phone, address)
+        return True, MarketerService.save(marketer)
+
+    @classmethod
+    @exception_handling
+    def edit(cls, id, name, family, birth_date, gender, national_id, email, phone, address):
+        marketer = Marketer(id, name, family, birth_date, gender, national_id, email, phone, address)
+        marketer.id = id
+        return True, MarketerService.edit(marketer)
+
+    @classmethod
+    @exception_handling
+    def remove(cls, id):
+        return True, MarketerService.remove(id)
+
+    @classmethod
+    @exception_handling
+    def find_all(cls, ):
+        return True, MarketerService.find_all()
+
+    @classmethod
+    @exception_handling
+    def find_by_id(cls, id):
+        return True, MarketerService.find_by_id(id)
+
+
+class WorkerController:
+    @classmethod
+    @exception_handling
+    def save(cls, name, family, birth_date, gender, national_id, email, phone, address):
+        worker = Worker(name, family, birth_date, gender, national_id, email, phone, address)
+        return True, WorkerService.save(worker)
+
+    @classmethod
+    @exception_handling
+    def edit(cls, id, name, family, birth_date, gender, national_id, email, phone, address):
+        worker = Worker(id, name, family, birth_date, gender, national_id, email, phone, address)
+        worker.id = id
+        return True, WorkerService.edit(worker)
+
+    @classmethod
+    @exception_handling
+    def remove(cls, id):
+        return True, WorkerService.remove(id)
+
+    @classmethod
+    @exception_handling
+    def find_all(cls, ):
+        return True, WorkerService.find_all()
+
+    @classmethod
+    @exception_handling
+    def find_by_id(cls, id):
+        return True, WorkerService.find_by_id(id)

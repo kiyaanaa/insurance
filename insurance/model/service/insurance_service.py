@@ -1,10 +1,11 @@
 from insurance.controller.exception.insurance_exception import InsuranceNotFoundError, InsuredNotFoundError, \
-    WorkerNotFoundError
+    WorkerNotFoundError, MarketerNotFoundError, InsuranceSellNotFoundError
 from insurance.model.da.insurance_da import DataAccess
 from insurance.model.entity.marketer import Marketer
 from insurance.model.entity.worker import Worker
 from insurance.model.entity.__init__ import *
 from insurance.model.entity.insured import Insured
+from insurance.model.entity.insurance_sell import InsuranceSell
 
 
 class InsuranceService:
@@ -110,3 +111,75 @@ class WorkerService:
     def find_by_id(cls, id):
         worker_da = DataAccess(Worker)
         return worker_da.find_by_id(id)
+
+
+class MarketerService:
+    @classmethod
+    def save(cls, marketer):
+        marketer_da = DataAccess(Marketer)
+        marketer_da.save(marketer)
+        return marketer
+
+    @classmethod
+    def edit(cls, marketer):
+        marketer_da = DataAccess(Marketer)
+        if marketer_da.find_by_id(marketer.id):
+            marketer_da.edit(marketer)
+            return marketer
+        else:
+            raise MarketerNotFoundError()
+
+    @classmethod
+    def remove(cls, id):
+        marketer_da = DataAccess(Marketer)
+        if marketer_da.find_by_id(id):
+            return marketer_da.remove(id)
+        else:
+            raise MarketerNotFoundError()
+
+    @classmethod
+    def find_all(cls, ):
+        marketer_da = DataAccess(Marketer)
+        return marketer_da.find_all()
+
+    @classmethod
+    def find_by_id(cls, id):
+        marketer_da = DataAccess(Marketer)
+        return marketer_da.find_by_id(id)
+
+
+class InsuranceSellService:
+    @classmethod
+    def save(cls, insurance_sell):
+        insurance_sell_da = DataAccess(InsuranceSell)
+        insurance_sell_da.save(insurance_sell)
+        return insurance_sell
+
+    @classmethod
+    def edit(cls, insurance_sell):
+        insurance_sell_da = DataAccess(InsuranceSell)
+        if insurance_sell_da.find_by_id(insurance_sell.id):
+            insurance_sell_da.edit(insurance_sell)
+            return insurance_sell
+        else:
+            raise InsuranceSellNotFoundError()
+
+    @classmethod
+    def remove(cls, id):
+        insurance_sell_da = DataAccess(InsuranceSell)
+        if insurance_sell_da.find_by_id(id):
+            return insurance_sell_da.remove(id)
+        else:
+            raise InsuranceSellNotFoundError()
+
+    @classmethod
+    def find_all(cls, ):
+        insurance_sell_da = DataAccess(InsuranceSell)
+        return insurance_sell_da.find_all()
+
+    @classmethod
+    def find_by_id(cls, id):
+        insurance_sell_da = DataAccess(InsuranceSell)
+        return insurance_sell_da.find_by_id(id)
+
+

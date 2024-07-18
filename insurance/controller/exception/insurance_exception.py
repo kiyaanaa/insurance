@@ -16,3 +16,8 @@ class WorkerNotFoundError(Exception):
 class MarketerNotFoundError(Exception):
     def __init__(self, *args):
         super().__init__("Marketer Not Found !!!")
+
+
+class InsuranceSellNotFoundError(Exception):
+    def __init__(self, *args):
+        super().__init__("Insurance Sell Not Found !!!")
