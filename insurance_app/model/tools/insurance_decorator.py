@@ -1,4 +1,4 @@
-from insurance.model.tools.__init__ import *
+from insurance_app.model.tools.__init__ import *
 
 
 def exception_handling(function):

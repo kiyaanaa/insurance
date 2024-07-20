@@ -1,4 +1,4 @@
-from insurance.model.tools.logger import Logger
+from insurance_app.model.tools.logger import Logger
 import re
 from datetime import datetime, date
 import logging

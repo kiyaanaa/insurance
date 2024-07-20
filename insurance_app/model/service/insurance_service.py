@@ -1,10 +1,10 @@
-from insurance.model.service.__init__ import *
+from insurance_app.model.service.__init__ import *
 
 
 class InsuranceService:
     @classmethod
     def save(cls, insurance):
-        insurance_da = DataAccess(Insurance)
+        insurance_da = DataAccess(insurance)
         insurance_da.save(insurance)
         return insurance
 

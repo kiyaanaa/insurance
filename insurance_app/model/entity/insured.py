@@ -1,8 +1,8 @@
-from insurance.model.entity.__init__ import *
+from insurance_app.model.entity import *
 
 
-class Worker(Base):
-    __tablename__ = 'worker_tbl'
+class Insured(Base):
+    __tablename__ = 'insured_tbl'
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _name = Column("name", String(30))
     _family = Column("family", String(30))
@@ -107,4 +107,6 @@ class Worker(Base):
         if isinstance(deleted, bool):
             self._deleted = deleted
         else:
-            raise ValueError("Invalid Deleted !!!")
+            raise ValueError("Invalid deleted !!!")
+
+

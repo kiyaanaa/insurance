@@ -1,10 +1,12 @@
-from insurance.model.entity.__init__ import *
+from insurance_app.model.entity.base import Base
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
+from insurance_app.model.tools.insurance_validator import *
 
 
 class Insurance(Base):
     __tablename__ = 'insurance_tbl'
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
-    _insurance_id = Column("insurance_id", String(30))
+    _insurance_id = Column("insurance_id", Integer)
     _worker_id = Column("worker_id", Integer)
     _name = Column("name", String(30))
     _date_of_sale = Column("date_of_sale", DateTime)
@@ -19,6 +21,30 @@ class Insurance(Base):
         self._date_of_sale = date_of_sale
         self._price = price
         self._deleted = deleted
+
+    @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        self._id = id
+
+    @property
+    def worker_id(self):
+        return self._id
+
+    @id.setter
+    def worker_id(self, id):
+        self._id = id
+
+    @property
+    def insurance_id(self):
+        return self._id
+
+    @id.setter
+    def insurance_id(self, id):
+        self._id = id
 
     @property
     def name(self):

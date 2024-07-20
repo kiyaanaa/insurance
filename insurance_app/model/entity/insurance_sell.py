@@ -1,13 +1,12 @@
-from insurance.model.entity.__init__ import *
+from insurance_app.model.entity import *
 
 
 class InsuranceSell(Base):
     __tablename__ = 'insurance_sell_tbl'
     _id = Column("id", Integer, primary_key=True, autoincrement=True)
     _person_id = Column("person_id", Integer)
-    _insured_id = Column("insurance_id", Integer)
-    _start_date = Column("start_date", Date)
-    _end_date = Column("end_date", Date)
+    _start_date = Column("start_date", DateTime)
+    _end_date = Column("end_date", DateTime)
     _date_of_sale = Column("date_of_sale", DateTime)
     _deleted = Column("deleted", Boolean, default=False)
 
