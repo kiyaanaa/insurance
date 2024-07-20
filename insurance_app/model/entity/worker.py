@@ -27,6 +27,14 @@ class Worker(Base):
         self._deleted = deleted
 
     @property
+    def id(self):
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        self._id = id
+
+    @property
     def name(self):
         return self._name
 

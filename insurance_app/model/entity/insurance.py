@@ -34,7 +34,7 @@ class Insurance(Base):
     def worker_id(self):
         return self._id
 
-    @id.setter
+    @worker_id.setter
     def worker_id(self, id):
         self._id = id
 
@@ -42,7 +42,7 @@ class Insurance(Base):
     def insurance_id(self):
         return self._id
 
-    @id.setter
+    @insurance_id.setter
     def insurance_id(self, id):
         self._id = id
 
