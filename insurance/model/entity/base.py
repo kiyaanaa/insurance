@@ -1,4 +1,4 @@
-from sqlalchemy.orm import DeclarativeBase
+from insurance.model.entity.__init__ import *
 
 
 class Base(DeclarativeBase):

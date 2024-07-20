@@ -1,7 +1,4 @@
-from sqlalchemy import create_engine, and_, or_
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy_utils import create_database, database_exists
-from insurance.model.entity.base import Base
+from insurance.model.da.__init__ import *
 
 connection_string = "mysql+pymysql://root:root123@localhost:3306/mft"
 if not database_exists(connection_string):

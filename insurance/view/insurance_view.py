@@ -1,4 +1,4 @@
-from tkinter import ttk, END
+from insurance.view.__init__ import *
 
 
 class Table:

@@ -1,8 +1,4 @@
-from sqlalchemy import Column, Integer, ForeignKey, Boolean, DateTime, Date
-from sqlalchemy.orm import relationship
-
-from insurance.model.entity import *
-from insurance.model.tools.insurance_validator import *
+from insurance.model.entity.__init__ import *
 
 
 class InsuranceSell(Base):

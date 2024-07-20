@@ -1,5 +1,4 @@
-import logging
-import sys
+from insurance.model.tools.__init__ import *
 
 
 class Logger:

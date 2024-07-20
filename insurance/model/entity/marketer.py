@@ -1,7 +1,4 @@
-from datetime import datetime
-from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
-from insurance.model.entity.base import Base
-from insurance.model.tools.insurance_validator import *
+from insurance.model.entity.__init__ import *
 
 
 class Marketer(Base):
