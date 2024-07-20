@@ -1,4 +1,4 @@
-from insurance_app.model.da.__init__ import *
+from insurance_app.model.da import *
 
 connection_string = "mysql+pymysql://root:root123@localhost:3306/mft"
 if not database_exists(connection_string):
