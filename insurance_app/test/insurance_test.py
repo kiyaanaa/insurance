@@ -2,11 +2,9 @@ from insurance_app.controller.insurance_controller import InsuranceController, I
 from insurance_app.model.service import *
 from insurance_app.controller import *
 
-#controller = InsuranceController()
-#controller.save("dbgyyg", "2024/01/05", "200")
+InsuranceController.save("dbgyyg", "2024/01/05", "200")
 
-insuranceservice = InsuranceService()
-insuranceservice.save("saman")
+#InsuranceService.save("saman")
 
 
 

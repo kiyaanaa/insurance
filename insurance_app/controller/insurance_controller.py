@@ -66,7 +66,7 @@ class InsuredController:
     @exception_handling
     def save(cls, name, family, birth_date, gender, national_id, email, phone, address):
         insured = Insured(name, family, birth_date, gender, national_id, email, phone, address)
-        return True, InsuranceService.save(insured)
+        return True, InsuredService.save(insured)
 
     @classmethod
     @exception_handling
