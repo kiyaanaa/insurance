@@ -40,6 +40,14 @@ class InsuranceSell(Base):
         self._id = id
 
     @property
+    def person_id(self):
+        return self._person_id
+
+    @person_id.setter
+    def person_id(self, person_id):
+        self._person_id = person_id
+
+    @property
     def start_date(self):
         return self._start_date
 

@@ -32,19 +32,19 @@ class Insurance(Base):
 
     @property
     def worker_id(self):
-        return self._id
+        return self._worker_id
 
     @worker_id.setter
-    def worker_id(self, id):
-        self._id = id
+    def worker_id(self, worker_id):
+        self._worker_id = worker_id
 
     @property
     def insurance_id(self):
-        return self._id
+        return self._insurance_id
 
     @insurance_id.setter
-    def insurance_id(self, id):
-        self._id = id
+    def insurance_id(self, insurance_id):
+        self._insurance_id = insurance_id
 
     @property
     def name(self):
