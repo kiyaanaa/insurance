@@ -1,5 +1,6 @@
 from insurance.controller.__init__ import *
 
+
 class InsuranceController:
     @classmethod
     @exception_handling
