@@ -1,6 +1,4 @@
-from insurance_app.model.entity.base import Base
-from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
-from insurance_app.model.tools.insurance_validator import *
+from insurance_app.model.entity import *
 
 
 class Insurance(Base):

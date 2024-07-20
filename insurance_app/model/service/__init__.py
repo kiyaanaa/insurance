@@ -6,3 +6,5 @@ from insurance_app.model.entity.worker import Worker
 from insurance_app.model.entity.__init__ import *
 from insurance_app.model.entity.insured import Insured
 from insurance_app.model.entity.insurance_sell import InsuranceSell
+from insurance_app.model.entity import insurance
+

@@ -1,4 +1,4 @@
-from insurance_app.view.__init__ import *
+from insurance_app.view import *
 
 
 class Table:

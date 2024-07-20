@@ -1,4 +1,4 @@
-from insurance_app.model.tools.__init__ import *
+from insurance_app.model.tools import *
 
 
 def pattern_validator(pattern, message):

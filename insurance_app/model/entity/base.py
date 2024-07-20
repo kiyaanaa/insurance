@@ -1,4 +1,4 @@
-from insurance_app.model.entity import DeclarativeBase
+from insurance_app.model.entity import *
 
 
 class Base(DeclarativeBase):

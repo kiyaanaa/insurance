@@ -1,5 +1,6 @@
 import logging
 import sys
+from insurance_app.model.tools import *
 
 
 class Logger:

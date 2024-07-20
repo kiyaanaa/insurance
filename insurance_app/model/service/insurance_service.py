@@ -1,4 +1,4 @@
-from insurance_app.model.service.__init__ import *
+from insurance_app.model.service import *
 
 
 class InsuranceService:
@@ -10,7 +10,7 @@ class InsuranceService:
 
     @classmethod
     def edit(cls, insurance):
-        insurance_da = DataAccess(Insurance)
+        insurance_da = DataAccess(insurance)
         if insurance_da.find_by_id(insurance.id):
             insurance_da.edit(insurance)
             return insurance
@@ -19,7 +19,7 @@ class InsuranceService:
 
     @classmethod
     def remove(cls, id):
-        insurance_da = DataAccess(Insurance)
+        insurance_da = DataAccess(insurance)
         if insurance_da.find_by_id(id):
             return insurance_da.remove(id)
         else:
@@ -27,12 +27,12 @@ class InsuranceService:
 
     @classmethod
     def find_all(cls, ):
-        insurance_da = DataAccess(Insurance)
+        insurance_da = DataAccess(insurance)
         return insurance_da.find_all()
 
     @classmethod
     def find_by_id(cls, id):
-        insurance_da = DataAccess(Insurance)
+        insurance_da = DataAccess(insurance)
         return insurance_da.find_by_id(id)
 
 
