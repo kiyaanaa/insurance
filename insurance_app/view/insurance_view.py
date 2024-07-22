@@ -1,33 +1,28 @@
 from insurance_app.view import *
 
 
-class Table:
-    def __init__(self, master, headers, widths, x, y, select_function):
-        self.master = master
-        self.x = x
-        self.y = y
-        self.headers = headers
-        self.widths = widths
-        self.select_function = select_function
-        self.columns = list(range(len(headers)))
+class Insurance:
+    def __init__(self):
+        super().__init__()
+        self.win = tk.Tk()
+        self.win.title("Insurance Details")
+        w, h = self.win.winfo_screenwidth(), self.win.winfo_screenheight()
+        self.win.geometry(f"{w}x{h}")
 
-        self.table = ttk.Treeview(self.master, columns=self.columns, show="headings")
-        for col in self.columns:
-            self.table.column(col, width=self.widths[col])
-            self.table.heading(col, text=self.headers[col])
+        ttk.Label(self.win, text=f" : لطفا مشخصات بیمه را وارد کنید", width=30, anchor="e").place(x=1063, y=20)
 
-        self.table.bind("<ButtonRelease>", self.select_table)
-        self.table.bind("<KeyRelease>", self.select_table)
-        self.table.place(x=x, y=y)
+        ttk.Label(self.win, text=": اسم", width=20,anchor="e").place(x=1120, y=70)
+        tk.Entry(self.win).place(x=1050, y=70)
 
-    def refresh_table(self, data_list):
-        for item in self.table.get_children():
-            self.table.delete(item)
+        ttk.Label(self.win, text=": تاریخ فروش", width=20, anchor="e").place(x=1120, y=110)
+        tk.Entry(self.win).place(x=1050, y=110)
 
-        if data_list:
-            for data in data_list:
-                self.table.insert("", END, values=tuple(data.values()))
+        ttk.Label(self.win, text=": قیمت", width=20, anchor="e").place(x=1120, y=150)
+        tk.Entry(self.win).place(x=1050, y=150)
 
-    def select_table(self, event):
-        data = self.table.item(self.table.focus())["values"]
-        self.select_function(data)
+        ttk.Button(self.win, text="تایید", command=self.win.destroy).place(x=1080, y=350)
+
+        self.win.mainloop()
+
+
+ui = Insurance()
