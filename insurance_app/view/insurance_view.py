@@ -6,8 +6,8 @@ class Insurance:
         super().__init__()
         self.win = tk.Tk()
         self.win.title("Insurance Details")
-        w, h = self.win.winfo_screenwidth(), self.win.winfo_screenheight()
-        self.win.geometry(f"{w}x{h}")
+        # w, h = self.win.winfo_screenwidth(), self.win.winfo_screenheight()
+        # self.win.geometry(f"{w}x{h}")
 
         ttk.Label(self.win, text=f" : لطفا مشخصات بیمه را وارد کنید", width=30, anchor="e").place(x=1063, y=20)
 
