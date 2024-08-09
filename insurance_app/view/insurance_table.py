@@ -1,3 +1,5 @@
+from tkinter import END, ttk
+
 from insurance_app.view import *
 
 

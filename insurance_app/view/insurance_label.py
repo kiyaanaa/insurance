@@ -1,4 +1,4 @@
-from insurance_app.view import *
+from insurance_app.view.tools import *
 
 
 class TextWithLabel:
