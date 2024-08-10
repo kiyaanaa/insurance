@@ -16,9 +16,9 @@ class insurance_view:
         label_instruction.place(x=135, y=30, anchor="w")
 
         label_first_name = ctk.CTkLabel(frame, text="نوع بیمه", font=("b nazanin", 20, "bold"))
-        label_first_name.place(x=445, y=110, anchor="w")
+        label_first_name.place(x=445, y=280, anchor="w")
         self.entry_insurance_type = ctk.CTkEntry(frame, width=320)
-        self.entry_insurance_type.place(x=20, y=110, anchor="w")
+        self.entry_insurance_type.place(x=20, y=280, anchor="w")
 
         label_sale_date = ctk.CTkLabel(frame, text="  تاریخ فروش", font=("b nazanin", 20, "bold"))
         label_sale_date.place(x=370, y=365, anchor="w")

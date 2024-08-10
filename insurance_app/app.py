@@ -75,7 +75,7 @@ button_frame = ctk.CTkFrame(app)
 button_frame.pack(side="top", fill="x")
 
 # اضافه کردن دکمه‌ها به صفحه اصلی
-person_button = ctk.CTkButton(button_frame, text="شخص", command=show_insured_view())
+person_button = ctk.CTkButton(button_frame, text="شخص", command=show_insured_view)
 person_button.pack(side="left", padx=10, pady=10)
 
 insurance_button = ctk.CTkButton(button_frame, text="بیمه", command=show_insurance_view)
@@ -83,9 +83,6 @@ insurance_button.pack(side="left", padx=10, pady=10)
 
 insurance_purchase_button = ctk.CTkButton(button_frame, text="خرید بیمه", command=show_insurance_sell_view)
 insurance_purchase_button.pack(side="left", padx=10, pady=10)
-
-# نمایش صفحه اولیه
-show_insured_view()  # این خط صفحه "شخص" را به‌طور پیش‌فرض نمایش می‌دهد
 
 # اجرای برنامه
 app.mainloop()
