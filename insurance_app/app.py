@@ -7,7 +7,6 @@ from insurance_app.view.insured_view import insured_view
 
 
 def get_insurance_purchases():
-    # اتصال به دیتابیس (تغییر دهید به مسیر و نام دیتابیس خود)
     conn = sqlite3.connect('insurance.db')
     cursor = conn.cursor()
 
